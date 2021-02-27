@@ -48,6 +48,61 @@
       </div>
     </div>
   </nav>
+  <main role="main">
+    <div class="container-fluid">
+ <div class="row">
+    <div class="card bg-dark text-white align-items-center d-none d-md-block">
+    
+     
+   </div>
+   <div class="d-block d-md-none">
+     <img src="images/contact-us1.jpg" class="card-img" alt="Contact Us">
+   </div>
+ </div>
+</div>
+ <div class="container-fluid contact pt-3">
+     <div class="container">
+ <div class="row">
+   <div class="col-lg-12 col-md-12 col-sm-12">
+    <h1>ORDER SUMMARY</h1>
+    
+       <form action="thankyou.html" method="post">
+       <div class="row">
+       <div class="col">
+       <input type="text" class="form-control" name="cust_name" id="cust_name" placeholder="NAME*" required>
+       </div>
+       </div><br>
+       <div class="row">
+       <div class="col">
+       <input type="text" class="form-control" name="phone" id="phone" placeholder="PHONE NUMBER*" required>
+       </div>
+       </div><br>
+       <div class="row">
+       <div class="col">
+       <p>Please select your payment type:</p>
+  <input type="radio" id="debit" name="p_type" value="debit">
+  <label for="debit">Debit</label><br>
+  <input type="radio" id="visa" name="p_type" value="visa">
+  <label for="visa">Visa</label><br>
+  <input type="radio" id="wallet" name="p_type" value="wallet">
+  <label for="wallet">Wallet</label></div>
+<br>
+</div>
+<div class="row">
+<div class="col">
+       <input type="text" class="form-control" name="quantity" id="quantity" placeholder="QUANTITY*" required>
+       </div>
+       </div><br>
+       <button type="submit" id="submit" class="btn btn-dark-green" style="margin-bottom: 1%;">PLACE ORDER</button>
+       </form>         
+ </div>
+ </div>
+ </div>
+   
+ </div>
+ 
+</main>
+	  
 	  
 <!-- Footer -->	
   <footer class="bg-dark text-white" role="contentinfo">
