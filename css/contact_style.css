@@ -1,0 +1,138 @@
+/* body{
+ font-family: sans-serif;
+} */
+* {
+  box-sizing: border-box;
+}
+
+h3{
+    font-weight: bolder;
+}
+.font-black{
+    color: #000;
+}
+.contact-image img{
+    height: auto;
+    width: 100%;
+}
+.contact{
+    background-color: #EBEBEB;
+    padding-bottom: 8%;
+    color: #000; 
+   
+}
+.address{
+    background: #FFF;
+    margin-top: -5%;
+    padding: 2em 3em 1em 3em;
+}
+.fa{
+    padding: 2em 5em;
+    transform: scale(2,2);
+    color: #2E614D;
+    /*display: flex;
+    align-items:center;
+    justify-content:center;*/
+    
+}
+
+.schedule{
+    margin-top: 2em;
+    font-family: sans-serif;
+}
+/*fab{
+    margin-top: 2em;
+    transform: scale(3,3);
+    color: #2E614D;
+}*/
+.email,.time,.phone{
+    color: #003300;
+    font-weight: bold;
+}
+.col-sm-9{
+   padding-left: 5%;
+    padding-top: 5%;
+}
+p{
+    font-family: sans-serif;
+    color: #474747;
+}
+input[type=text],input[type=email]{
+    background: #EBEBEB;
+}
+textarea#message{
+ background: #EBEBEB;   
+}
+.contact-number{
+    background: #FFF;
+    text-align: center;
+    font-family: sans-serif;
+    padding:5%;
+    font-size: 1.2em;
+}
+.fluid-bg{
+    background-color:#FFF; 
+}
+.container-bg{
+    background-color: #343a40!important;
+    font-family: sans-serif;
+    padding: 2%;
+}
+.mobile-img,{
+    padding: 5%;
+}
+.icon .fab,.fas{
+    transform: scale(2,2);
+    display: inline-block;
+    padding: 2em;
+}
+.mobile,.ui,.game{
+    padding-top: 2em;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 0;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  padding: 0;
+}
+.gallary{
+    padding: 2em;
+    background-color: #FFF;
+}
+.bg-green{
+    background-color:#2E614D;
+    
+}
+.column img{
+    width: 100%;
+}
+.content img{
+    width: 100%;
+    height: auto;
+}
+::-webkit-input-placeholder{
+    color: #000 !important;
+}
+::placeholder {
+  color: #000 !important;
+  opacity: 1; /* Firefox */
+}
+:-moz-placeholder { /* Firefox 18-4 */
+   color: #000 !important;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #000 !important;  
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #000 !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #000 !important;
+}
