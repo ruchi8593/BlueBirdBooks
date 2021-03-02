@@ -34,7 +34,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white" id="main_nav" role="navigation">
     <div class="container"> 
 		<a class="navbar-brand" href="index.html">
-			<img src="images/main-logo.jpg" class="img-fluid" alt="Logo" />
+			<img src="images/logo.png" class="img-fluid" alt="Logo" width="80px" height="80px"/>
 		</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
 		  <span class="navbar-toggler-icon"></span> 
@@ -65,8 +65,31 @@
  <div class="row">
    <div class="col-lg-12 col-md-12 col-sm-12">
     <h1>ORDER SUMMARY</h1>
+    <?php
+    require("mysqli_connect.php");
+    if(!isset($_POST['bookname']))
+    {
+      echo "Your cart is empty, select item first....!!!!!";
+    }
+    else
+    {
+    $book_id = $_POST['bookname'] ;
+    //echo $book_id;
+    $query = "select * from inventory where book_id = '$book_id'";
+    $result = @mysqli_query($dbc,$query);
+    //echo $query;
+    while($row = mysqli_fetch_array($result))
+      {
+        ?>
+        
+          <h4 class="card-title"><?php echo $row['book_name']; ?></h4>
+          <p class="card-text"><?php echo "$ ". $row['price']; ?></p>
+          <?php
+      }
     
-       <form action="thankyou.html" method="post">
+    ?>
+    
+       <form action="placeorder.php" method="post">
        <div class="row">
        <div class="col">
        <input type="text" class="form-control" name="cust_name" id="cust_name" value="<?php if (isset($_POST['cust_name'])) echo $_POST['cust_name']; ?>" placeholder="NAME*" required>
@@ -79,6 +102,7 @@
        </div><br>
        <div class="row">
        <div class="col">
+       <input type="hidden" name="bookname" value=<?php echo "$book_id"?>>
        <p>Please select your payment type:</p>
   <input type="radio" id="debit" name="p_type" value="debit" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "debit")) echo 'checked="true" '; ?>>
   <label for="debit">Debit</label><br>
@@ -94,7 +118,8 @@
        </div>
        </div><br>
        <button type="submit" id="submit" class="btn btn-dark-green" style="margin-bottom: 1%;">PLACE ORDER</button>
-       </form>         
+       </form>
+      <?php } ?>        
  </div>
  </div>
  </div>
@@ -116,7 +141,7 @@
 		  <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter mr-2" style="color: white;"></i></a>
 		    </div>
 			  <div class="col-md-12">
-		<h6>&copy; 2020 | All Rights Reserved.</h6>
+		<h6>&copy; 2021 | All Rights Reserved.</h6>
 				  </div>
 			  </div>
 	  </div>
@@ -125,7 +150,6 @@
 
 <!-- Optional JavaScript --> 
 <script src="js/jquery-3.4.1.slim.min.js"></script> 
-<script src="bootstrap/js/popper.min.js"></script> 
 <script src="bootstrap/js/bootstrap.min.js"></script> 
 <script src="https://kit.fontawesome.com/2b63d8a8a8.js" crossorigin="anonymous"></script>
 </body>
