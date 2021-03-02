@@ -42,7 +42,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
 			<li class="nav-item active"> <a class="nav-link" href="index.html">HOME</a><div class="underline"></div> </li>
-            <li class="nav-item"> <a class="nav-link" href="movies.php">MOVIES</a><div class="underline"></div> </li>
+            <li class="nav-item"> <a class="nav-link" href="books.php">BOOKS</a><div class="underline"></div> </li>
             <li class="nav-item"> <a class="nav-link" href="checkout.php">CHECK OUT</a><div class="underline"></div> </li>
 		</ul>
       </div>

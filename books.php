@@ -42,12 +42,30 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
 			<li class="nav-item active"> <a class="nav-link" href="index.html">HOME</a><div class="underline"></div> </li>
-            <li class="nav-item"> <a class="nav-link" href="movies.php">MOVIES</a><div class="underline"></div> </li>
+            <li class="nav-item"> <a class="nav-link" href="books.php">BOOKS</a><div class="underline"></div> </li>
             <li class="nav-item"> <a class="nav-link" href="checkout.php">CHECK OUT</a><div class="underline"></div> </li>
 		</ul>
       </div>
     </div>
   </nav>
+  <!-- books data -->
+  <div>
+    <?php
+    require("mysqli_connect.php");
+    $query = "select * from inventory";
+    $r = @mysqli_query($dbc, $query);
+
+    while($row = mysqli_fetch_array($r)){
+      $id = $row['book_id'];
+      $name = $row['book_name'];
+      $price = $row['price'];
+    
+      echo "<img src ='images/{$row['image']}' width = '150' height='200'></img>";
+      echo "<h4>$name</h4>";
+      echo "<h4>$price</h4>";
+    }
+    ?>
+  </div>
 <!-- Footer -->	
   <footer class="bg-dark text-white" role="contentinfo">
     
