@@ -13,7 +13,7 @@
 <!-- FontAwesome CSS -->
 <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
 <link rel="stylesheet" href="css/style.css">
-<title>WebTree - Web Services Company</title>
+<title>Blue Bird Books</title>
 </head>
 <body>
 <div class="container-fluid px-0 bg-grey">
@@ -69,28 +69,28 @@
        <form action="thankyou.html" method="post">
        <div class="row">
        <div class="col">
-       <input type="text" class="form-control" name="cust_name" id="cust_name" placeholder="NAME*" required>
+       <input type="text" class="form-control" name="cust_name" id="cust_name" value="<?php if (isset($_POST['cust_name'])) echo $_POST['cust_name']; ?>" placeholder="NAME*" required>
        </div>
        </div><br>
        <div class="row">
        <div class="col">
-       <input type="text" class="form-control" name="phone" id="phone" placeholder="PHONE NUMBER*" required>
+       <input type="text" class="form-control" name="phone" id="phone" value="<?php if (isset($_POST['phone'])) echo $_POST['phone']; ?>" placeholder="PHONE NUMBER*" required>
        </div>
        </div><br>
        <div class="row">
        <div class="col">
        <p>Please select your payment type:</p>
-  <input type="radio" id="debit" name="p_type" value="debit">
+  <input type="radio" id="debit" name="p_type" value="debit" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "debit")) echo 'checked="true" '; ?>>
   <label for="debit">Debit</label><br>
-  <input type="radio" id="visa" name="p_type" value="visa">
+  <input type="radio" id="visa" name="p_type" value="visa" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "visa")) echo 'checked="true" '; ?>>
   <label for="visa">Visa</label><br>
-  <input type="radio" id="wallet" name="p_type" value="wallet">
+  <input type="radio" id="wallet" name="p_type" value="wallet" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "wallet")) echo 'checked="true" '; ?>>
   <label for="wallet">Wallet</label></div>
 <br>
 </div>
 <div class="row">
 <div class="col">
-       <input type="text" class="form-control" name="quantity" id="quantity" placeholder="QUANTITY*" required>
+       <input type="text" class="form-control" name="quantity" id="quantity" value="<?php if (isset($_POST['quantity'])) echo $_POST['quantity']; ?>" placeholder="QUANTITY*" required>
        </div>
        </div><br>
        <button type="submit" id="submit" class="btn btn-dark-green" style="margin-bottom: 1%;">PLACE ORDER</button>
