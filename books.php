@@ -13,7 +13,7 @@
 <!-- FontAwesome CSS -->
 <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
 <link rel="stylesheet" href="css/style.css">
-<title>WebTree - Web Services Company</title>
+<title>Blue Bird Books</title>
 </head>
 <body>
 <div class="container-fluid px-0 bg-grey">
