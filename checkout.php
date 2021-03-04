@@ -55,16 +55,15 @@
     
      
    </div>
-   <div class="d-block d-md-none">
-     <img src="images/contact-us1.jpg" class="card-img" alt="Contact Us">
-   </div>
+   
  </div>
 </div>
  <div class="container-fluid contact pt-3">
      <div class="container">
- <div class="row">
-   <div class="col-lg-12 col-md-12 col-sm-12">
-    <h1>ORDER SUMMARY</h1>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h1 style="text-decoration: underline">ORDER SUMMARY</h1>
+   
     <?php
     require("mysqli_connect.php");
     if(!isset($_POST['bookname']))
@@ -81,41 +80,62 @@
     while($row = mysqli_fetch_array($result))
       {
         ?>
+        <div class="row mt-5">
+          <div class="col-sm-3 col-md-3 col-xs-3">
+          <img src ='images/<?php echo $row['image'] ?>' width = '200px' height='200px' alt='Book images'></img>
+        </div>
         
-          <h4 class="card-title"><?php echo $row['book_name']; ?></h4>
-          <p class="card-text"><?php echo "$ ". $row['price']; ?></p>
-          <?php
+          <div class="col-sm-4 col-md-4 col-xs-4">
+            
+            <h5><?php echo "Book name: ". $row['book_name']; ?></h5>
+            <p><?php echo "Price: ". "$ ". $row['price']; ?></p>
+      </div>
+      <div class="col-sm-5 col-md-5 col-xs-5"></div>
+      </div>
+      
+      <?php
       }
     
     ?>
     
-       <form action="placeorder.php" method="post">
-       <div class="row">
-       <div class="col">
-       <input type="text" class="form-control" name="cust_name" id="cust_name" value="<?php if (isset($_POST['cust_name'])) echo $_POST['cust_name']; ?>" placeholder="NAME*" required>
-       </div>
-       </div><br>
-       <div class="row">
-       <div class="col">
-       <input type="text" class="form-control" name="phone" id="phone" value="<?php if (isset($_POST['phone'])) echo $_POST['phone']; ?>" placeholder="PHONE NUMBER*" required>
-       </div>
-       </div><br>
-       <div class="row">
-       <div class="col">
-       <input type="hidden" name="bookname" value=<?php echo "$book_id"?>>
-       <p>Please select your payment type:</p>
-  <input type="radio" id="debit" name="p_type" value="debit" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "debit")) echo 'checked="true" '; ?>>
-  <label for="debit">Debit</label><br>
-  <input type="radio" id="visa" name="p_type" value="visa" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "visa")) echo 'checked="true" '; ?>>
-  <label for="visa">Visa</label><br>
-  <input type="radio" id="wallet" name="p_type" value="wallet" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "wallet")) echo 'checked="true" '; ?>>
-  <label for="wallet">Wallet</label></div>
+      <form action="placeorder.php" method="post">
+      <div class="row mt-5">
+      <div class="col">
+      <input type="text" class="form-control" name="cust_name" id="cust_name" value="<?php if (isset($_POST['cust_name'])) echo $_POST['cust_name']; ?>" placeholder="NAME*" >
+      <div class="name"></div>  
+    </div>
+      </div><br>
+      <div class="row">
+      <div class="col">
+      <input type="text" class="form-control" name="phone" id="phone" value="<?php if (isset($_POST['phone'])) echo $_POST['phone']; ?>" placeholder="PHONE NUMBER*" >
+      <div class="phone"></div>  
+    </div>
+      </div><br>
+      <div class="row">
+      <div class="col">
+      <input type="text" class="form-control" name="address" id="address" value="<?php if (isset($_POST['address'])) echo $_POST['address']; ?>" placeholder="ADDRESS*" >
+      <div class="address"></div>  
+    </div>
+      </div><br>
+      <div class="row">
+      <div class="col">
+      <input type="hidden" name="bookname" value=<?php echo "$book_id"?>>
+      <p>Please select your payment type:</p>
+      <input type="radio" id="debit" name="p_type" value="debit" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "debit")) echo 'checked="true" '; ?>>
+      <label for="debit">Debit</label><br>
+      <input type="radio" id="visa" name="p_type" value="visa" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "visa")) echo 'checked="true" '; ?>>
+      <label for="visa">Visa</label><br>
+      <input type="radio" id="wallet" name="p_type" value="wallet" <?php if(isset($_POST['p_type']) && ($_POST['p_type'] == "wallet")) echo 'checked="true" '; ?>>
+      <label for="wallet">Wallet</label>
+      <div class="payment"></div>
+    </div>
 <br>
 </div>
 <div class="row">
 <div class="col">
-       <input type="text" class="form-control" name="quantity" id="quantity" value="<?php if (isset($_POST['quantity'])) echo $_POST['quantity']; ?>" placeholder="QUANTITY*" required>
-       </div>
+       <input type="number" class="form-control" name="quantity" id="quantity" value="<?php if (isset($_POST['quantity'])) echo $_POST['quantity']; ?>" placeholder="QUANTITY*">
+       <div class="quantity"></div> 
+      </div>
        </div><br>
        <button type="submit" id="submit" class="btn btn-dark-green" style="margin-bottom: 1%;">PLACE ORDER</button>
        </form>
@@ -154,3 +174,4 @@
 <script src="https://kit.fontawesome.com/2b63d8a8a8.js" crossorigin="anonymous"></script>
 </body>
 </html>
+

@@ -94,7 +94,7 @@ body {
   <!-- books data -->
   
   <div class="container py-7">
-  <h2 class="mt-4">Available Books </h2>
+  <h2 class="mt-4">Featured Resources </h2>
     <div class="row mt-5">
       
   <?php
@@ -122,7 +122,7 @@ body {
             <h4 class="card-title"><?php echo $row['book_name']; ?></h4>
             <p class="card-text"><?php echo "$ ". $row['price']; ?></p>
             <input type="hidden" name="bookname" value=<?php echo $row['book_id']; ?>>
-            <input type = "submit" name="addtocart" class="btn btn-book" value="Add to Cart" id =>
+            <input type = "submit" name="addtocart" class="btn btn-book" value="Buy Now" id =>
       </form>
           </div>
         </div>

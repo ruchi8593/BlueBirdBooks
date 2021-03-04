@@ -79,6 +79,18 @@
 	padding: 5%;
 	width: 100%;
 }
+.btn-home {
+	background-color:#307a10;
+	color: #fff;
+	border: 1px solid #307a10;
+	border-radius: 15px;
+	padding: 2%;
+	width: 50%;
+	font-weight: bold;
+	font-size: 15pt;
+	margin-top: 2%;
+	margin-left: 20%;
+}
 .btn-dark-green:hover {
 	color: #fff;
 }
